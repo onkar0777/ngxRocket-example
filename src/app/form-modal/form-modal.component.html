@@ -1,0 +1,60 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Please fill this form!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="jumbotron">
+          <div class="container">
+              <div class="row">
+                  <h2>Angular 6 Reactive Form Validation</h2>
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group">
+                          <label translate>First Name</label>
+                          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                              <div *ngIf="f.firstName.errors.required" translate>First Name is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label translate>Last Name</label>
+                          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                              <div *ngIf="f.lastName.errors.required" translate>Last Name is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label translate>Email</label>
+                          <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                              <div *ngIf="f.email.errors.required" translate>Email is required</div>
+                              <div *ngIf="f.email.errors.email" translate>Email must be a valid email address</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label translate>Password</label>
+                          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required" translate>Password is required</div>
+                              <div *ngIf="f.password.errors.minlength" translate>Password must be at least 6 characters</div>
+                          </div>
+                      </div>
+                      <div class="form-group modal-footer">
+                          <button [disabled]="loading" class="btn btn-primary" translate>Register</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div> -->
+</ng-template>
+
+<a (click)="open(content)">
+  <i class="fas fa-question-circle"></i>
+  <span translate>Form</span>
+</a>

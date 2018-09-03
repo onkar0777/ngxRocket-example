@@ -1,0 +1,18 @@
+{
+  "APP_NAME": "travel-single-ngxRocket",
+  "About": "A propos",
+  "Hello world !": "Bonjour le monde !",
+  "Home": "Accueil",
+  "Version": "Version",
+  "Form": "Fr- Form",
+  "First Name": "FR - First Name",
+  "First Name is required": "FR - First Name is required",
+  "Last Name": "FR - Last Name",
+  "Last Name is required": "Last Name is required",
+  "Email": "FR - Email",
+  "Email is required": "FR - Email is required",
+  "Email must be a valid email address": "FR - Email must be a valid email address",
+  "Password": "FR - Password",
+  "Password is required": "FR - Password is required",
+  "Password must be at least 6 characters": "FR - Password must be at least 6 characters"
+}
